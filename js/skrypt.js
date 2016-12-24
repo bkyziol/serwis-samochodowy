@@ -8,10 +8,23 @@ function wypozycjonujTerminarz() {
   $('.container-terminarz').css({ 'min-height': ($(window).height()-50) + 'px' });
 }
 
-function btnTerminarzBlink() {
-  $('.btn-terminarz').animate({ 'box-shadow': '10px 10px 10px 10px yellow' }, 1000);
-  //setTimeout(btnTerminarzBlink, 2000);
+function initMap() {
+  var uluru = {lat: 51.109, lng: 17.032};
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 15,
+    center: uluru
+  });
+  var marker = new google.maps.Marker({
+    position: uluru,
+    map: map
+  });
 }
+
+$(function () {
+  $('#kafelek-terminarz').on('click', function (){
+    alert('Wciśnięto kafelek terminarz')
+  });
+});
 
 $(function () {
   wypozycjonujTerminarz();
