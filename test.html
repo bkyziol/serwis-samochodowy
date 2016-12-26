@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>test</title>
+    <style media="screen">
+    .container{
+      min-height: 300px;
+      position: relative;
+    }
+    .wspolna {
+      height: 50px;
+      font-size: 30px;
+      padding: 10px
+    }
+      .element1 {
+        background-color: yellow;
+        position: static;
+      }
+      .element2 {
+        height: 50px;
+        background-color: blue;
+        position: fixed;
+        top: 20px;
+
+      }
+      .element3 {
+        height: 50px;
+        background-color: red;
+        position: static;
+      }
+
+
+    </style>
+  </head>
+  <body>
+    <div class="container" style="background-color: green">
+
+    </div>
+    <div class="container" style="background-color: pink">
+      <div class="wspolna element1">AAAAAAAAAA</div>
+      <div class="wspolna element2">BBBBBBBBBB</div>
+      <div class="wspolna element3">CCCCCCCCCC</div>
+    </div>
+  </body>
+</html>

@@ -1,13 +1,40 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
-  background-position: center;
+  /*background-position: center;*/
   background-color: black;
-  background-image: url("../img/tlo.jpg");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
+  /*background-image: url("../img/tlo.jpg");*/
+  /*background-repeat: no-repeat;*/
+  /*background-attachment: fixed;*/
+  /*background-size: cover;*/
   color: #c7c7c7;
   font-family: 'Noto Sans', sans-serif;
   position: relative;
+  /*filter: blur(2px);*/
+}
+
+.background-image {
+  background-image: url('../img/tlo.jpg');
+  background-position: center;
+  background-color: black;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: block;
+  /*filter: blur(3px);*/
+  /*-webkit-filter: blur(2px);*/
+  height: 100%;
+  left: 0;
+  position: fixed;
+  right: 0;
+  z-index: 1;
+}
+
+.content {
+  /*filter: blur(1px);*/
+  position: relative;
+  z-index: 2;
 }
 
 .navbar-inverse {
@@ -145,6 +172,17 @@ body {
   box-shadow: 0px 0px 10px 0px #9c0000;
 }
 
+.btn-uslugi{
+  color: #333;
+  background-color: #f30202;
+  border-color: #f30202;
+  border-radius: 4px;
+  font-size: 16px;
+  /*font-family: 'Rationale', sans-serif;*/
+  padding: 5px 10px 5px 10px;
+  /*margin-top: 10px;*/
+}
+
 .container-kontakt{
   padding-top: 10px;
   padding-bottom: 10px;
@@ -183,6 +221,9 @@ body {
   color: #e70404;
   font-size: 14px;
   padding-top: 5px;
+}
+
+.autor-podpis{
   font-family: 'Nothing You Could Do', cursive;
 }
 
