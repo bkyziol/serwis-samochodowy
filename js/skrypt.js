@@ -48,7 +48,14 @@ $(function () {
 
 $(function () {
   wypozycjonujTerminarz();
+  alignHeights();
 });
+
+$(window).resize(function() {
+  wypozycjonujTerminarz();
+  alignHeights();
+});
+
 
 $(function () {
   $('#mainNavbar a').click( function (event) {
@@ -69,13 +76,53 @@ $(function () {
 });
 
 $(function () {
-  $('.btn-uslugi').mouseover(function (event) {
+  $('.btn').mouseover(function (event) {
     var ktory = $(this).attr('data-podswietl');
     $('#' + ktory).css({ 'box-shadow': '0px 0px 10px 0px #f30202' });
   });
 
-  $('.btn-uslugi').mouseout(function (event) {
+  $('.btn').mouseout(function (event) {
     var ktory = $(this).attr('data-podswietl');
     $('#' + ktory).css({ 'box-shadow': '0px 0px 10px 0px #9c0000' });
   });
+
+  $('.btn').focus(function (event) {
+    var ktory = $(this).attr('data-podswietl');
+    $('#' + ktory).css({ 'box-shadow': '0px 0px 10px 0px #f30202' });
+  });
 });
+
+$('.btn-uslugi').blur(function (event) {
+  var ktory = $(this).attr('data-podswietl');
+  $('#' + ktory).css({ 'box-shadow': '0px 0px 10px 0px #9c0000' });
+});
+
+function alignHeights() {
+  var tallest = 0;
+  var thisHeight = 0;
+  var boxArray = $('#row-eq-height').children();
+  console.log('Odpalam funkcje');
+	for (var i = 0; i < boxArray.length; i++) {
+    $(boxArray[i]).children('.kafelek-uslugi').css({ 'min-height': 'auto' });
+    console.log(i);
+    // boxArray[i].style.height = 'auto';
+    thisHeight = $(boxArray[i]).height();
+    console.log('Wyskosc: ' + thisHeight);
+    if (thisHeight > tallest) {
+      tallest = thisHeight;
+    }
+  }
+
+  console.log('Najwyzszy: ' + tallest);
+  tallest = tallest + 20;
+  for (var j = 0; j < boxArray.length; j++) {
+    $(boxArray[j]).children('.kafelek-uslugi').css({ 'min-height': tallest + 'px' });
+  }
+}
+
+// $(function () {
+//   alignHeights();
+// });
+// // window.onresize = function () {
+// // 	setTimeout(alignHeights, 200);
+// // }

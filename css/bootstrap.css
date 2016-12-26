@@ -3555,7 +3555,7 @@ tbody.collapse.in {
   clear: both;
   font-weight: normal;
   line-height: 1.42857143;
-  color: red;
+  color: #333;
   white-space: nowrap;
 }
 .dropdown-menu > li > a:hover,
@@ -4163,7 +4163,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
-{
+.navbar {
   position: relative;
   min-height: 50px;
   margin-bottom: 20px;
@@ -4675,7 +4675,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   color: #9d9d9d;
 }
 .navbar-inverse .navbar-link:hover {
-  color: red;
+  color: #fff;
 }
 .navbar-inverse .btn-link {
   color: #9d9d9d;

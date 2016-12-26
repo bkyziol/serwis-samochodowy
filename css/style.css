@@ -3,16 +3,27 @@
 }
 
 body {
-  /*background-position: center;*/
   background-color: black;
-  /*background-image: url("../img/tlo.jpg");*/
-  /*background-repeat: no-repeat;*/
-  /*background-attachment: fixed;*/
-  /*background-size: cover;*/
   color: #c7c7c7;
   font-family: 'Noto Sans', sans-serif;
   position: relative;
-  /*filter: blur(2px);*/
+}
+
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus {
+  outline: 0px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+.btn:hover,
+.btn:focus,
+.btn.focus {
+  color: black;
+  text-decoration: none;
 }
 
 .background-image {
@@ -22,8 +33,6 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   display: block;
-  /*filter: blur(3px);*/
-  /*-webkit-filter: blur(2px);*/
   height: 100%;
   left: 0;
   position: fixed;
@@ -32,13 +41,13 @@ body {
 }
 
 .content {
-  /*filter: blur(1px);*/
   position: relative;
   z-index: 2;
 }
 
 .navbar-inverse {
   font-size: 16px;
+  font-weight: bold;
   font-family: 'Rationale', sans-serif;
   background-color: #222;
   border-color: #080808;
@@ -106,6 +115,7 @@ body {
 
 .dropdown-menu > li > a {
   color: #e70404;
+  font-weight: bold;
 }
 
 .dropdown-menu > li > a:hover,
@@ -138,12 +148,6 @@ body {
   box-shadow: 0px 0px 10px 0px #9c0000;
 }
 
-#kafelek-terminarz:hover,
-#kafelek-terminarz:active {
-  /*border: 1px solid #9c0000;*/
-  box-shadow: 0px 0px 10px 0px #f30202;
-}
-
 .btn-terminarz{
   color: #333;
   background-color: #f30202;
@@ -173,14 +177,16 @@ body {
 }
 
 .btn-uslugi{
+  position: absolute;;
   color: #333;
   background-color: #f30202;
   border-color: #f30202;
   border-radius: 4px;
   font-size: 16px;
-  /*font-family: 'Rationale', sans-serif;*/
   padding: 5px 10px 5px 10px;
-  /*margin-top: 10px;*/
+  bottom: 25px;
+  right: 40px;
+  outline: 0;
 }
 
 .container-kontakt{
@@ -219,8 +225,9 @@ body {
 
 .autor{
   color: #e70404;
-  font-size: 14px;
+  font-size: 16px;
   padding-top: 5px;
+  font-weight: bold;
 }
 
 .autor-podpis{
@@ -230,4 +237,48 @@ body {
 #map {
  height: 400px;
  width: 100%;
+}
+
+.modal-content {
+  background-color: black;
+  border: 1px solid transparent;
+  box-shadow: 0px 0px 10px 0px #e70404;
+  padding: 10px;
+}
+
+.modal-header {
+  padding: 15px;
+  border-bottom: 1px dotted #e70404;
+}
+
+.modal-footer {
+  padding: 15px;
+  text-align: right;
+  border-top: 1px dotted #e70404;
+}
+
+.btn-modal{
+  color: #333;
+  background-color: #f30202;
+  border-color: #f30202;
+  border-radius: 4px;
+  font-size: 16px;
+  padding: 5px 10px 5px 10px;
+}
+
+.btn-modal{
+  color: black;
+  background-color: #e70404;
+  border-color: #e70404;
+  border-radius: 4px;
+  font-size: 16px;
+  padding: 5px 10px 5px 10px;
+}
+
+.btn:hover,
+.btn:focus,
+.btn.focus {
+  color: black;
+  background-color: #f30202;
+  border-color: #f30202;
 }

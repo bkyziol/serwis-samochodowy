@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Serwis samochodowy</title>
   <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
-  <!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> -->
   <link rel="stylesheet" href="css/style.css" type="text/css" />
   <link href="https://fonts.googleapis.com/css?family=Bangers|Nothing+You+Could+Do|Noto+Sans|Rationale" rel="stylesheet">
   <link rel="stylesheet" href="css/fontello.css" type="text/css" />
@@ -26,7 +25,6 @@
           </button>
           <a class="navbar-brand" href="#">NAZWAFIRMY</a>
         </div>
-        <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="navHeaderCollapse">
           <ul class="nav navbar-nav navbar-right">
             <li class="active"><a href="#divHome"><span class="glyphicon glyphicon-home"></span> Strona główna<span class="sr-only">(current)</span></a></li>
@@ -57,114 +55,93 @@
       </div>
     </nav>
     <!--TERMINARZ-->
-    <div class="container container-terminarz">
+    <div class="container container-terminarz" >
       <div class="col-md-6 col-lg-5" id="kafelek-terminarz">
         <h2 class="text-center">Umów się na wymianę opon:</h2>
-        <p class="text-center"><span class="btn btn-terminarz">Terminarz</span></p>
+        <p class="text-center"><span class="btn btn-terminarz" data-podswietl="kafelek-terminarz">Terminarz</span></p>
       </div>
     </div>
     <!--USŁUGI-->
     <div class="container-fluid container-uslugi">
       <div class="container">
-        <div class="row">
+        <div class="row" id="row-eq-height">
           <div class="col-sm-6 col-md-4">
             <div id="divZawieszenie" class="kafelek-uslugi">
               <img class="center-block img-responsive" src="img/zawieszenie.jpg" alt="Zawieszenie" height="265" width="400" />
               <h2 class="text-center">Zawieszenie</h2>
               <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras massa sapien, pharetra ultrices posuere et, cursus vel velit. Aliquam erat volutpat. Phasellus ac odio quis quam ultrices suscipit quis vitae nibh.</p>
-              <p class="text-right">
-                <span class="btn btn-uslugi" data-podswietl="divZawieszenie">Więcej</span>
-              </p>
+              <button class="btn btn-uslugi" data-podswietl="divZawieszenie">Więcej</button>
             </div>
           </div>
           <div class="col-sm-6 col-md-4">
             <div id="divHamulce" class="kafelek-uslugi">
               <img class="center-block img-responsive" src="img/hamulce.jpg" alt="Hamulce" height="265" width="400" />
               <h2 class="text-center">Hamulce</h2>
-              <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras massa sapien, pharetra ultrices posuere et, cursus vel velit. Aliquam erat volutpat. Phasellus ac odio quis quam ultrices suscipit quis vitae nibh.</p>
-              <p class="text-right">
-                <span class="btn btn-uslugi" data-podswietl="divHamulce">Więcej</span>
-              </p>
+              <p class="text-justify">Praesent fringilla ac velit vitae vehicula. Sed sed dapibus purus, at volutpat lorem. Donec finibus vulputate nisl, sagittis aliquam leo tristique non.</p>
+              <button class="btn btn-uslugi" data-podswietl="divHamulce">Więcej</button>
             </div>
           </div>
           <div class="col-sm-6 col-md-4">
             <div id="divGeometria" class="kafelek-uslugi">
               <img class="center-block img-responsive" src="img/geometria.jpg" alt="Geometria" height="265" width="400" />
               <h2 class="text-center">Geometria</h2>
-              <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras massa sapien, pharetra ultrices posuere et, cursus vel velit. Aliquam erat volutpat. Phasellus ac odio quis quam ultrices suscipit quis vitae nibh.</p>
-              <p class="text-right">
-                <span class="btn btn-uslugi" data-podswietl="divGeometria">Więcej</span>
-              </p>
+              <p class="text-justify">Morbi facilisis arcu libero, auctor varius enim sollicitudin eget. Phasellus mollis molestie odio quis aliquet. Nunc non accumsan nibh. </p>
+              <button class="btn btn-uslugi" data-podswietl="divGeometria">Więcej</button>
             </div>
           </div>
           <div class="col-sm-6 col-md-4">
             <div id="divKlimatyzacja" class="kafelek-uslugi">
               <img class="center-block img-responsive" src="img/klimatyzacja.jpg" alt="Klimatyazacja" height="265" width="400" />
               <h2 class="text-center">Klimatyzacja</h2>
-              <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras massa sapien, pharetra ultrices posuere et, cursus vel velit. Aliquam erat volutpat. Phasellus ac odio quis quam ultrices suscipit quis vitae nibh.</p>
-              <p class="text-right">
-                <span class="btn btn-uslugi" data-podswietl="divKlimatyzacja">Więcej</span>
-              </p>
+              <p class="text-justify">Pellentesque suscipit auctor metus eu egestas. Integer congue ultrices ipsum sit amet ullamcorper. Suspendisse vulputate pretium quam vel elementum.</p>
             </div>
           </div>
           <div class="col-sm-6 col-md-4">
             <div id="divPrzeglady" class="kafelek-uslugi">
               <img class="center-block img-responsive" src="img/przeglad.jpg" alt="Przeglad" height="265" width="400" />
               <h2 class="text-center">Przeglądy</h2>
-              <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras massa sapien, pharetra ultrices posuere et, cursus vel velit. Aliquam erat volutpat. Phasellus ac odio quis quam ultrices suscipit quis vitae nibh.</p>
-              <p class="text-right">
-                <span class="btn btn-uslugi" data-podswietl="divPrzeglady">Więcej</span>
-              </p>
+              <p class="text-justify">Praesent molestie varius nunc, ornare tempor urna sollicitudin nec. Suspendisse nec sapien non nunc pharetra maximus vitae sit amet enim.</p>
+              <button class="btn btn-uslugi" data-podswietl="divPrzeglady">Więcej</button>
             </div>
           </div>
           <div class="col-sm-6 col-md-4">
             <div id="divAutodetailing" class="kafelek-uslugi">
               <img class="center-block img-responsive" src="img/autodetailing.jpg" alt="Autodetailing" height="265" width="400" />
               <h2 class="text-center">Autodetailing</h2>
-              <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras massa sapien, pharetra ultrices posuere et, cursus vel velit. Aliquam erat volutpat. Phasellus ac odio quis quam ultrices suscipit quis vitae nibh.</p>
-              <p class="text-right">
-                <span class="btn btn-uslugi" data-podswietl="divAutodetailing">Więcej</span>
-              </p>
+              <p class="text-justify">Cras lacinia orci sodales ipsum blandit facilisis. Praesent accumsan aliquam lorem sed venenatis. Sed eget metus interdum, laoreet lectus quis, mattis nibh.</p>
+              <button class="btn btn-uslugi" data-podswietl="divAutodetailing">Więcej</button>
             </div>
           </div>
           <div class="col-sm-6 col-md-4">
             <div id="divOpony" class="kafelek-uslugi">
               <img class="center-block img-responsive" src="img/opony.jpg" alt="Wymiana opon" height="265" width="400" />
               <h2 class="text-center">Wymiana opon</h2>
-              <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras massa sapien, pharetra ultrices posuere et, cursus vel velit. Aliquam erat volutpat. Phasellus ac odio quis quam ultrices suscipit quis vitae nibh.</p>
-              <p class="text-right">
-                <span class="btn btn-uslugi" data-podswietl="divOpony">Więcej</span>
-              </p>
+              <p class="text-justify">Sed aliquet velit massa, nec egestas odio hendrerit id. Integer in nisl at lorem luctus sagittis sed vel turpis. Etiam porttitor, est a egestas imperdiet, enim tortor tempus est, ut pulvinar felis justo eu tortor.</p>
+              <button class="btn btn-uslugi" data-podswietl="divOpony">Więcej</button>
             </div>
           </div>
           <div class="col-sm-6 col-md-4">
             <div id="divWulkanizacja" class="kafelek-uslugi">
               <img class="center-block img-responsive" src="img/wulkanizacja.jpg" alt="Wulkanizacja" height="265" width="400" />
               <h2 class="text-center">Naprawa opon</h2>
-              <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras massa sapien, pharetra ultrices posuere et, cursus vel velit. Aliquam erat volutpat. Phasellus ac odio quis quam ultrices suscipit quis vitae nibh.</p>
-              <p class="text-right">
-                <span class="btn btn-uslugi" data-podswietl="divWulkanizacja">Więcej</span>
-              </p>
+              <p class="text-justify">Nam accumsan rutrum arcu sollicitudin malesuada. Phasellus vestibulum at sem in feugiat. </p>
+              <button class="btn btn-uslugi" data-podswietl="divWulkanizacja">Więcej</button>
             </div>
           </div>
           <div class="col-sm-6 col-md-4">
             <div id="divProstowanie" class="kafelek-uslugi">
               <img class="center-block img-responsive" src="img/prostowanie.jpg" alt="Prostowanie" height="265" width="400" />
               <h2 class="text-center">Naprawa felg</h2>
-              <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras massa sapien, pharetra ultrices posuere et, cursus vel velit. Aliquam erat volutpat. Phasellus ac odio quis quam ultrices suscipit quis vitae nibh.</p>
-              <p class="text-right">
-                <span class="btn btn-uslugi" data-podswietl="divProstowanie">Więcej</span>
-              </p>
+              <p class="text-justify">Nam consectetur tortor magna, eget mattis erat dictum ut. Pellentesque feugiat sem non arcu euismod, vel fermentum leo congue.</p>
+              <button class="btn btn-uslugi" data-podswietl="divProstowanie">Więcej</button>
             </div>
           </div>
           <div class="col-sm-6 col-md-4">
             <div id="divPrzechowalnia" class="kafelek-uslugi">
               <img class="img-responsive" src="img/przechowalnia.jpg" alt="Przechowalnia" height="265" width="400">
               <h2 class="text-center">Przechowalnia kół</h2>
-              <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras massa sapien, pharetra ultrices posuere et, cursus vel velit. Aliquam erat volutpat. Phasellus ac odio quis quam ultrices suscipit quis vitae nibh.</p>
-              <p class="text-right">
-                <span class="btn btn-uslugi" data-podswietl="divPrzechowalnia">Więcej</span>
-              </p>
+              <p class="text-justify"> Nunc non accumsan nibh. Donec malesuada sapien nec nunc tincidunt, vel commodo ligula lacinia.</p>
+              <button class="btn btn-uslugi" data-podswietl="divPrzechowalnia">Więcej</button>
             </div>
           </div>
         </div>
@@ -230,8 +207,8 @@
           <p>Test stststst</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal" name="button" id="test">Test</button>
-          <button type="button" class="btn btn-default" data-dismiss="modal" name="button">Zamknij</button>
+          <button type="button" class="btn btn-modal" data-dismiss="modal" name="button" id="test">Test</button>
+          <button type="button" class="btn btn-modal" data-dismiss="modal" name="button">Zamknij</button>
         </div>
       </div>
     </div>
@@ -239,16 +216,17 @@
   <!-- MODAL USŁUGI -->
   <div class="modal fade" id="modalUslugi" tabindex="-1">
     <div class="modal-dialog">
-      <div class="modal-content">
+      <div class="modal-content" id="divModal">
         <div class="modal-header">
-          <button class="close" data-dismiss="modal">&times;</button>
-          <h3 class="modal-title">Title</h3>
+          <button class="close">&times;</button>
+          <h3 class="modal-title">Lorem ipsum</h3>
         </div>
         <div class="modal-body">
-          <p>Test stststst</p>
+          <img class="center-block img-responsive" src="img/narzedzia.jpg" alt="Narzedzia" height="468" width="900" />
+          <p><br/>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum non convallis tortor. Fusce vitae magna volutpat, sagittis urna non, fermentum velit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras at efficitur lectus. Fusce vel sem eu tortor porttitor facilisis. Fusce posuere odio lectus, et ornare nunc mattis non. Nulla pretium erat nec efficitur tempor. Nunc consequat nibh sit amet vulputate pharetra. Integer id auctor eros. Phasellus non orci eget urna pulvinar cursus. Nulla facilisi. In hac habitasse platea dictumst. Etiam pellentesque, tellus in faucibus porta, enim sem elementum nisi, quis laoreet nunc erat a turpis.</p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal" name="button">Zamknij</button>
+          <button type="button" class="btn btn-modal" data-dismiss="modal" name="button">Zamknij</button>
         </div>
       </div>
     </div>
