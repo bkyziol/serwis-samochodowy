@@ -47,7 +47,7 @@ body {
 
 .navbar-inverse {
   font-size: 16px;
-  font-weight: bold;
+  /*font-weight: bold;*/
   font-family: 'Rationale', sans-serif;
   background-color: #222;
   border-color: #080808;
@@ -115,7 +115,6 @@ body {
 
 .dropdown-menu > li > a {
   color: #e70404;
-  font-weight: bold;
 }
 
 .dropdown-menu > li > a:hover,
