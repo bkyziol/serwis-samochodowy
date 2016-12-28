@@ -282,3 +282,23 @@ body {
   background-color: #f30202;
   border-color: #f30202;
 }
+
+.carousel-control.left {
+  color: #f30202;
+}
+
+.carousel-control.right {
+  color: #f30202;
+}
+
+.carousel-control:hover,
+.carousel-control:focus {
+  color: #f30202;
+}
+
+.carousel-indicators li {
+  border: 1px solid #f30202;
+}
+.carousel-indicators .active {
+  background-color: #f30202;
+}
