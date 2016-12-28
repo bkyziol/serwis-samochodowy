@@ -80,6 +80,7 @@ $(window).resize(function () {
 });
 
 $(function () {
+
   wypozycjonujTerminarz();
 
   dostosujWysokosc();
@@ -117,4 +118,7 @@ $(function () {
   $('#mainNavbar a').click(function (event) {
     powolneScrollowanie.call(this);
   });
+
+  $('#modalTerminarz').modal({ 'backdrop':'static' });
+  
 });
