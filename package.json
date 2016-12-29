@@ -1,0 +1,27 @@
+{
+  "name": "serwis-samochodowy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "server": "webpack-dev-server ./js/index.js",
+    "start": "webpack ./js/index.js build/bundle.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bkyziol/serwis-samochodowy.git"
+  },
+  "author": "Bartek Kyzioł",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bkyziol/serwis-samochodowy/issues"
+  },
+  "homepage": "https://github.com/bkyziol/serwis-samochodowy#readme",
+  "devDependencies": {
+    "webpack": "^1.14.0",
+    "webpack-dev-server": "^1.16.2"
+  },
+  "dependencies": {
+    "jquery": "^3.1.1"
+  }
+}

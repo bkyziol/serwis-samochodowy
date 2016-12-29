@@ -1,0 +1,314 @@
+// out: ../build/style.css, sourcemap: true, compress: false
+
+@wiodacy: rgba(220, 0, 0, 1);
+@wiodacy-jasny: rgba(255, 0, 0, 1);
+@wiodacy-jasny-przezroczyste: rgba(255, 0, 0, 0.4);
+@wiodacy-lekko-jasny: rgba(228, 0, 0, 1);
+@wiodacy-ciemny: rgba(156, 0, 0, 1);
+@wiodacy-ciemny-przezroczyste: rgba(156, 0, 0, 0.4);
+@tlo: rgba(15, 15, 15, 1);
+@tlo-przezroczyste: rgba(0,0,0,0.3);
+@tlo-lekko-przezroczyste: rgba(0,0,0,0.8);
+@czcionka: rgba(199, 199, 199, 1);
+@krawedz: rgba(50, 50, 50, 1);
+@przezroczysty: rgba(0,0,0,0);
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: @tlo;
+  color: @czcionka;
+  font-family: 'Noto Sans', sans-serif;
+  position: relative;
+}
+
+.btn{
+  color: @tlo;
+  background-color: @wiodacy;
+  border-color: @wiodacy;
+}
+
+.btn:hover,
+.btn:focus,
+.btn.focus {
+  color: @tlo;
+  background-color: @wiodacy-lekko-jasny;
+  border-color: @wiodacy-lekko-jasny;
+}
+
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus {
+  outline: 0px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+.btn-terminarz{
+  border-radius: 12px;
+  font-size: 30px;
+  padding: 15px 40px 15px 40px;
+  margin-top: 10px;
+}
+
+.btn-uslugi{
+  position: absolute;;
+  border-radius: 4px;
+  font-size: 16px;
+  padding: 5px 10px 5px 10px;
+  bottom: 25px;
+  right: 40px;
+  outline: 0;
+}
+
+.btn-modal{
+  border-radius: 4px;
+  font-size: 16px;
+  padding: 5px 10px 5px 10px;
+}
+
+.background-image {
+  background-image: url('../img/tlo.jpg');
+  background-position: center;
+  background-color: @tlo;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: block;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+}
+
+.navbar {
+  min-height: 35px;
+}
+
+.navbar-inverse {
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 'Rationale', sans-serif;
+  background-color: @tlo;
+  background-image: url("../img/real_cf.png");
+  border-bottom: 1px solid @krawedz;
+  border-top: 1px solid @krawedz;
+}
+
+.navbar-inverse .navbar-brand {
+  color: @wiodacy;
+  font-size: 40px;
+  font-family: 'Bangers', cursive;
+}
+
+.navbar-inverse .navbar-brand:hover,
+.navbar-inverse .navbar-brand:focus {
+  color: @wiodacy;
+  cursor: default;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+  border: 2px solid @przezroczysty;
+  color: @wiodacy;
+  border-radius: 6px;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-nav > li > a:focus {
+  color: @wiodacy-jasny;
+  background-color:@przezroczysty;
+  border: 2px solid @przezroczysty;
+}
+
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:focus {
+  color: @wiodacy-jasny;
+  border: 2px solid @wiodacy-ciemny;
+  background-color: @wiodacy-ciemny-przezroczyste;
+}
+
+.navbar-inverse .navbar-toggle .icon-bar {
+  background-color: @wiodacy;
+}
+
+.navbar-inverse .navbar-toggle {
+  border-color: @wiodacy;
+}
+
+.navbar-inverse .navbar-toggle:hover {
+  border-color: @wiodacy-jasny;
+}
+
+.navbar-inverse .navbar-nav > .open > a,
+.navbar-inverse .navbar-nav > .open > a:hover,
+.navbar-inverse .navbar-nav > .open > a:focus {
+  color: @wiodacy-jasny;
+  background: linear-gradient(to top, @wiodacy-jasny-przezroczyste, @przezroczysty); /* Standard syntax */
+  border: 2px solid black;
+  border-radius: 0;
+}
+
+.dropdown-menu {
+  background-color: @tlo;
+  background-image: url("../img/real_cf.png");
+  box-shadow: 0px 0px 10px 0px @wiodacy-ciemny;
+}
+
+.dropdown-menu > li > a {
+  color: @wiodacy;
+  font-size: 16px;
+}
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+  color: @wiodacy-jasny;
+  background-color:  @wiodacy-ciemny-przezroczyste;
+}
+
+.dropdown-menu > .active > a,
+.dropdown-menu > .active > a:hover,
+.dropdown-menu > .active > a:focus {
+  color: @wiodacy;
+  text-decoration: none;
+  background-color: @przezroczysty;
+  outline: 0;
+}
+
+.container-terminarz {
+  min-height: 800px;
+}
+
+.kafelek-terminarz {
+  .przygas;
+  // .podswiet;
+  border-radius: 14px;
+  padding-top: 20px;
+  padding-bottom: 30px;
+  margin-top: 200px;
+  color: @czcionka;
+  border: 1px solid @przezroczysty;
+  background-color: @tlo-lekko-przezroczyste;
+
+}
+
+.container-uslugi{
+  padding-top: 25px;
+  padding-bottom: 10px;
+  background-color: @tlo-lekko-przezroczyste;
+}
+
+.kafelek {
+  .przygas;
+  color: @czcionka;
+  margin: 10px;
+  padding: 20px 10px 20px 10px;
+  background-color: @tlo;
+  border: 1px solid @przezroczysty;
+  border-radius: 8px;
+}
+
+.kafelek-uslugi{
+  .kafelek;
+  padding-bottom: : 10px;
+  min-height: 400px;
+}
+
+.container-kontakt{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color:@tlo-lekko-przezroczyste;
+}
+
+.kafelek-kontakt{
+  .kafelek;
+  min-height: 200px;
+}
+
+.container-onas{
+  padding-top: 10px;
+  padding-bottom: 60px;
+  background-color: @tlo-lekko-przezroczyste;
+}
+
+.kafelek-onas{
+  .kafelek;
+  min-height: 200px;
+}
+
+.autor{
+  color: @wiodacy;
+  font-size: 16px;
+  padding-top: 5px;
+  font-weight: bold;
+}
+
+.autor-podpis{
+  font-family: 'Nothing You Could Do', cursive;
+}
+
+#map {
+ height: 400px;
+ width: 100%;
+}
+
+.modal-content {
+  background-color: @tlo;
+  border: 1px solid @przezroczysty;
+  box-shadow: 0px 0px 10px 0px @wiodacy;
+  padding: 10px;
+}
+
+.modal-header {
+  padding: 15px;
+  border-bottom: 1px dotted @wiodacy;
+}
+
+.modal-footer {
+  padding: 15px;
+  text-align: right;
+  border-top: 1px dotted @wiodacy;
+}
+
+.carousel-control.left,
+.carousel-control.right,
+.carousel-control:hover,
+.carousel-control:focus {
+  color: @wiodacy;
+}
+
+.carousel-indicators li {
+  border: 1px solid @wiodacy;
+}
+.carousel-indicators .active {
+  background-color: @wiodacy;
+}
+
+.wyostrzenie{
+  filter: blur(0px);
+}
+
+.rozmycie{
+  filter: blur(2px);
+}
+
+.podswietl{
+  box-shadow: 0px 0px 10px 0px @wiodacy-jasny;
+}
+
+.przygas{
+  box-shadow: 0px 0px 10px 0px @wiodacy-ciemny;
+}
+
+.ramka{
+  border-color: @wiodacy;
+}

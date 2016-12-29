@@ -7,16 +7,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Serwis samochodowy</title>
   <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
-  <link rel="stylesheet" href="css/style.css" type="text/css" />
+  <link rel="stylesheet" href="build/style.css" type="text/css" />
   <link href="https://fonts.googleapis.com/css?family=Bangers|Nothing+You+Could+Do|Noto+Sans|Rationale" rel="stylesheet">
   <link rel="stylesheet" href="css/fontello.css" type="text/css" />
+  <link rel="stylesheet" href="css/bootstrap-datepicker.css" type="text/css" />
 </head>
 <body id="divHome" data-spy="scroll" data-target="#mainNavbar" data-offset="100">
   <div class="background-image"></div>
   <div class="content">
     <!--NAWIGACJA-->
     <nav id="mainNavbar" class="nav navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
+      <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navHeaderCollapse" aria-expanded="false">
             <span class="sr-only">Toggle navigation</span>
@@ -24,7 +25,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">NAZWAFIRMY</a>
+          <span class="navbar-brand">NAZWAFIRMY</span>
         </div>
         <div class="collapse navbar-collapse" id="navHeaderCollapse">
           <ul class="nav navbar-nav navbar-right">
@@ -59,9 +60,9 @@
     </nav>
     <!--TERMINARZ-->
     <div class="container container-terminarz" >
-      <div class="col-md-6 col-lg-5" id="kafelek-terminarz">
+      <div id="divTerminarz" class="col-md-6 col-lg-5 kafelek-terminarz">
         <h2 class="text-center">Umów się na wymianę opon:</h2>
-        <p class="text-center"><span class="btn btn-terminarz" data-podswietl="kafelek-terminarz">Terminarz</span></p>
+        <p class="text-center"><span class="btn btn-terminarz" data-podswietl="divTerminarz">Terminarz</span></p>
       </div>
     </div>
     <!--USŁUGI-->
@@ -233,8 +234,8 @@
     </div>
     <!--STOPKA-->
     <div class="navbar navbar-inverse navbar-fixed-bottom">
-      <div class="container ">
-        <div class="autor"><p>Autor strony: <span class="autor-podpis">Bartosz Kyzioł</span></p></div>
+      <div class="container-fluid ">
+        <div class="autor pull-right">Autor strony: <span class="autor-podpis">Bartosz Kyzioł</span></div>
       </div>
     </div>
   </div>
@@ -243,14 +244,20 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <button class="close" data-dismiss="modal">&times;</button>
-          <h3 class="modal-title">Title</h3>
+          <!-- <button class="close" data-dismiss="modal" style="color: white">&times;</button> -->
+          <h3 class="modal-title">Umów się na wymianę opon:</h3>
         </div>
         <div class="modal-body">
-          <p>Test stststst</p>
+          <div class="form-group">
+            <div class="input-group date" data-provide="datepicker">
+              <input type="text" class="form-control">
+              <div class="input-group-addon">
+                  <span class="glyphicon glyphicon-th"></span>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-modal" data-dismiss="modal" name="button" id="test">Test</button>
           <button type="button" class="btn btn-modal" data-dismiss="modal" name="button">Zamknij</button>
         </div>
       </div>
@@ -261,7 +268,7 @@
     <div class="modal-dialog">
       <div class="modal-content" id="divModal">
         <div class="modal-header">
-          <button class="close">&times;</button>
+          <!-- <button class="close">&times;</button> -->
           <h3 class="modal-title">Lorem ipsum</h3>
         </div>
         <div class="modal-body">
@@ -277,7 +284,9 @@
   <!--SKRYPTY-->
   <script src="js/jquery-3.1.1.js"></script>
   <script src="js/bootstrap.js"></script>
-  <script src="js/skrypt.js"></script>
+  <script src="js/skrypty.js"></script>
+  <!-- <script src="build/bundle.js"></script> -->
+  <script src="bundle.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDk8BsxjXEYPrCBhCY3HqrMSn6J77-1JKA&callback=initMap"></script>
 </body>
 </html>
