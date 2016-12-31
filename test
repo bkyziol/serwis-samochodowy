@@ -1,0 +1,4 @@
+function wyostrzenie() {
+  $('.background-image').removeClass('rozmycie').addClass('wyostrzenie');
+  $('.content').removeClass('rozmycie').addClass('wyostrzenie');
+}
