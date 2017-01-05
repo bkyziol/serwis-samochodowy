@@ -3,7 +3,7 @@
 }
 body {
   background-color: #0f0f0f;
-  color: #c7c7c7;
+  color: #dcdcdc;
   font-family: 'Noto Sans', sans-serif;
   position: relative;
 }
@@ -48,6 +48,12 @@ body {
   border-radius: 4px;
   font-size: 16px;
   padding: 5px 10px 5px 10px;
+}
+.btn-potwierdz {
+  border-radius: 4px;
+  font-size: 20px;
+  padding: 6px 10px 6px 10px;
+  bottom: 20px;
 }
 .background-image {
   background-color: #0f0f0f;
@@ -133,6 +139,7 @@ body {
 .dropdown-menu > li > a {
   color: #dc0000;
   font-size: 16px;
+  font-weight: bold;
 }
 .dropdown-menu > li > a:hover,
 .dropdown-menu > li > a:focus {
@@ -157,7 +164,7 @@ body {
   padding-bottom: 30px;
   margin-top: 200px;
   left: -2000px;
-  color: #c7c7c7;
+  color: #dcdcdc;
   border: 1px solid rgba(0, 0, 0, 0);
   background-color: rgba(0, 0, 0, 0.8);
 }
@@ -169,7 +176,7 @@ body {
 }
 .kafelek {
   box-shadow: 0px 0px 10px 0px #9c0000;
-  color: #c7c7c7;
+  color: #dcdcdc;
   margin: 10px;
   padding: 20px 10px 20px 10px;
   background-color: #0f0f0f;
@@ -178,7 +185,7 @@ body {
 }
 .kafelek-uslugi {
   box-shadow: 0px 0px 10px 0px #9c0000;
-  color: #c7c7c7;
+  color: #dcdcdc;
   margin: 10px;
   padding: 20px 10px 20px 10px;
   background-color: #0f0f0f;
@@ -195,7 +202,7 @@ body {
 }
 .kafelek-kontakt {
   box-shadow: 0px 0px 10px 0px #9c0000;
-  color: #c7c7c7;
+  color: #dcdcdc;
   margin: 10px;
   padding: 20px 10px 20px 10px;
   background-color: #0f0f0f;
@@ -210,7 +217,7 @@ body {
 }
 .kafelek-onas {
   box-shadow: 0px 0px 10px 0px #9c0000;
-  color: #c7c7c7;
+  color: #dcdcdc;
   margin: 10px;
   padding: 20px 10px 20px 10px;
   background-color: #0f0f0f;
@@ -240,6 +247,15 @@ body {
 .modal-header {
   padding: 15px;
   border-bottom: 1px solid rgba(156, 0, 0, 0.4);
+}
+.close {
+  color: #dc0000;
+  opacity: 0.8;
+  text-shadow: 0 1px 0 #dc0000;
+}
+.close:hover {
+  color: #dc0000;
+  opacity: 1;
 }
 .modal-footer {
   padding: 15px;
@@ -277,7 +293,7 @@ body {
   border-radius: 0 0 8px 8px;
   border-left-color: rgba(0, 0, 0, 0);
   padding: 2px 10px 5px 10px;
-  color: #c7c7c7;
+  color: #dcdcdc;
   background-color: #9c0000;
   position: fixed;
   top: 230px;
@@ -300,13 +316,13 @@ body {
 }
 .ui-widget-content {
   background: #0f0f0f;
-  color: #c7c7c7;
+  color: #dcdcdc;
 }
-.ui-widget-header {
-  border: 2px solid #9c0000;
-  background: #dc0000;
-  color: #c7c7c7;
-  font-weight: bold;
+.ui-datepicker-next:hover {
+  border: 1px solid #ff0000;
+  background-color: #ff0000;
+  right: 2px;
+  top: 2px;
 }
 .ui-widget.ui-widget-content {
   border: 2px solid #9c0000;
@@ -316,30 +332,41 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
+.ui-datepicker-prev:hover {
+  border: 1px solid #ff0000;
+  background-color: #ff0000;
+  left: 2px;
+  top: 2px;
+}
+.ui-widget-header {
+  border: 2px solid #9c0000;
+  background: #dc0000;
+  color: #dcdcdc;
+  font-weight: bold;
+}
 .ui-state-default,
 .ui-widget-content .ui-state-default {
   border-radius: 4px;
   font-weight: bold;
   border: 1px solid #7d0000;
   background: #9c0000;
-  color: #c7c7c7;
+  color: #dcdcdc;
 }
 .ui-widget-content .ui-state-default:hover {
   border: 1px solid #9c0000;
   background-color: #dc0000;
 }
+.ui-widget-content .ui-state-active,
 .ui-widget-content .ui-state-active:hover,
-.ui-widget-content .ui-state-active {
+.ui-widget-content .ui-state-active.focus,
+.ui-widget-content .ui-state-active:focus {
   border: 1px solid #dc0000;
   background: #ff0000;
   color: white;
 }
-.ui-widget-content .ui-state-highlight {
-  border: 1px solid #dc0000;
-}
 .form-control {
   color: #0f0f0f;
-  background-color: #c7c7c7;
+  background-color: #dcdcdc;
 }
 label {
   font-weight: normal;
@@ -349,15 +376,15 @@ label {
   min-height: 207px;
   border: 2px solid #9c0000;
   border-radius: 4px;
-  margin-bottom: 13px;
+  margin-bottom: 4px;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  line-height: 1.7em;
+  line-height: 1.8em;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1em;
   font-weight: bold;
-  color: #c7c7c7;
+  color: #dcdcdc;
   text-align: center;
 }
 .planDnia-header {
@@ -382,26 +409,30 @@ label {
   font-weight: bold;
   border: 1px solid #7d0000;
   background: #9c0000;
-  color: #c7c7c7;
+  color: #dcdcdc;
   margin-left: 2px;
   margin-right: 3px;
   padding: 1px 3px 1px 3px;
 }
+.btn-planDnia-wybrany,
 .btn-planDnia:hover {
-  border: 1px solid #9c0000;
-  background: #dc0000;
-  cursor: pointer;
-}
-.btn-planDnia-wybrany {
   border: 1px solid #dc0000;
   background: #ff0000;
-  color: white;
+  cursor: pointer;
 }
-.btn-planDnia-nieaktywny {
+.btn-planDnia-nieaktywny,
+.btn-planDnia-nieaktywny:focus,
+.btn-planDnia-nieaktywny:hover {
   opacity: .35;
+  border: 1px solid #7d0000;
+  background: #9c0000;
+  cursor: default;
 }
 #tabela-planDnia {
   margin-left: 7px;
   width: 100%;
   margin-bottom: 7px;
+}
+.ostrzezenie {
+  margin-top: 15px;
 }

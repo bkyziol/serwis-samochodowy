@@ -10,7 +10,7 @@
 @tlo: rgba(15, 15, 15, 1);
 @tlo-przezroczyste: rgba(0,0,0,0.3);
 @tlo-lekko-przezroczyste: rgba(0,0,0,0.8);
-@czcionka: rgba(199, 199, 199, 1);
+@czcionka: rgba(220, 220, 220, 1);
 @krawedz: rgba(50, 50, 50, 0.8);
 @przezroczysty: rgba(0,0,0,0);
 
@@ -71,6 +71,13 @@ body {
   border-radius: 4px;
   font-size: 16px;
   padding: 5px 10px 5px 10px;
+}
+
+.btn-potwierdz{
+  border-radius: 4px;
+  font-size: 20px;
+  padding: 6px 10px 6px 10px;
+  bottom: 20px
 }
 
 .background-image {
@@ -170,6 +177,7 @@ body {
 .dropdown-menu > li > a {
   color: @wiodacy;
   font-size: 16px;
+  font-weight: bold;
 }
 
 .dropdown-menu > li > a:hover,
@@ -277,6 +285,16 @@ body {
   border-bottom: 1px solid @wiodacy-ciemny-przezroczyste;
 }
 
+.close{
+  color: @wiodacy;
+  opacity: 0.8;
+  text-shadow: 0 1px 0 @wiodacy;
+}
+.close:hover{
+  color: @wiodacy;
+  opacity: 1;
+}
+
 .modal-footer {
   padding: 15px;
   text-align: right;
@@ -350,11 +368,12 @@ body {
   color: @czcionka;
 }
 
-.ui-widget-header {
-  border: 2px solid @wiodacy-ciemny;
-  background: @wiodacy;
-  color: @czcionka;
-  font-weight: bold;
+
+.ui-datepicker-next:hover{
+  border: 1px solid @wiodacy-jasny;
+  background-color: @wiodacy-jasny;
+  right: 2px;
+  top: 2px;
 }
 
 .ui-widget.ui-widget-content {
@@ -365,6 +384,21 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
+
+.ui-datepicker-prev:hover{
+  border: 1px solid @wiodacy-jasny;
+  background-color: @wiodacy-jasny;
+  left: 2px;
+  top: 2px;
+}
+
+.ui-widget-header {
+  border: 2px solid @wiodacy-ciemny;
+  background: @wiodacy;
+  color: @czcionka;
+  font-weight: bold;
+}
+
 .ui-state-default, .ui-widget-content .ui-state-default,{
   border-radius: 4px;
   font-weight: bold;
@@ -372,20 +406,21 @@ body {
   background: @wiodacy-ciemny;
   color: @czcionka;
 }
+
 .ui-widget-content .ui-state-default:hover,{
   border: 1px solid @wiodacy-ciemny;
   background-color: @wiodacy;
 }
+
+.ui-widget-content .ui-state-active,
 .ui-widget-content .ui-state-active:hover,
-.ui-widget-content .ui-state-active{
+.ui-widget-content .ui-state-active.focus,
+.ui-widget-content .ui-state-active:focus{
   border: 1px solid @wiodacy;
   background: @wiodacy-jasny;
   color: white;
 }
 
-.ui-widget-content .ui-state-highlight,{
-  border: 1px solid @wiodacy;
-}
 .form-control{
   color: @tlo;
   background-color: @czcionka;
@@ -400,11 +435,11 @@ label{
   min-height: 207px;
   border: 2px solid @wiodacy-ciemny;
   border-radius: 4px;
-  margin-bottom: 13px;
+  margin-bottom: 4px;
   display: block;
   margin-left: auto;
   margin-right: auto;
-  line-height: 1.7em;
+  line-height: 1.8em;
   font-family: Arial,Helvetica,sans-serif;
   font-size: 1em;
   font-weight: bold;
@@ -442,25 +477,29 @@ label{
   padding: 1px 3px 1px 3px;
 
 }
-
+.btn-planDnia-wybrany,
 .btn-planDnia:hover{
-  border: 1px solid @wiodacy-ciemny;
-  background: @wiodacy;
+  border: 1px solid @wiodacy;
+  background: @wiodacy-jasny;
   cursor: pointer;
 }
 
-.btn-planDnia-wybrany{
-  border: 1px solid @wiodacy;
-  background: @wiodacy-jasny;
-  color: white;
-}
-
-.btn-planDnia-nieaktywny{
+.btn-planDnia-nieaktywny,
+.btn-planDnia-nieaktywny:focus,
+.btn-planDnia-nieaktywny:hover{
   opacity: .35;
+  cursor: default;
+  border: 1px solid @wiodacy-ciemny-mocno;
+  background: @wiodacy-ciemny;
+  cursor: default;
 }
 
 #tabela-planDnia{
   margin-left: 7px;
   width: 100%;
   margin-bottom: 7px;
+}
+
+.ostrzezenie{
+  margin-top: 15px;
 }

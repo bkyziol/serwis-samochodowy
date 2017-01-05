@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pl-Pl">
 <head>
   <meta charset="utf-8">
@@ -249,6 +249,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Umów się na wymianę opon.</h4>
         </div>
         <div class="modal-body">
@@ -265,15 +266,15 @@
                 </div>
                 <div class="planDnia-content">
                   <table id="tabela-planDnia">
-                    <tr><th>09:00</th><th><span id = "btn-0900" class= "btn-planDnia">Wolne</span></th><th>13:30</th><th><span id = "btn-1330" class= "btn-planDnia">Wolne</span></th></tr>
-                    <tr><th>09:30</th><th><span id = "btn-0930" class= "btn-planDnia">Wolne</span></th><th>14:00</th><th><span id = "btn-1400" class= "btn-planDnia">Wolne</span></th></tr>
-                    <tr><th>10:00</th><th><span id = "btn-1000" class= "btn-planDnia">Wolne</span></th><th>14:30</th><th><span id = "btn-1430" class= "btn-planDnia">Wolne</span></th></tr>
-                    <tr><th>10:30</th><th><span id = "btn-1030" class= "btn-planDnia">Wolne</span></th><th>15:00</th><th><span id = "btn-1500" class= "btn-planDnia">Wolne</span></th></tr>
-                    <tr><th>11:00</th><th><span id = "btn-1100" class= "btn-planDnia">Wolne</span></th><th>15:30</th><th><span id = "btn-1530" class= "btn-planDnia">Wolne</span></th></tr>
-                    <tr><th>11:30</th><th><span id = "btn-1130" class= "btn-planDnia">Wolne</span></th><th>16:00</th><th><span id = "btn-1600" class= "btn-planDnia">Wolne</span></th></tr>
-                    <tr><th>12:00</th><th><span id = "btn-1200" class= "btn-planDnia">Wolne</span></th><th>16:30</th><th><span id = "btn-1630" class= "btn-planDnia">Wolne</span></th></tr>
-                    <tr><th>12:30</th><th><span id = "btn-1230" class= "btn-planDnia">Wolne</span></th><th>17:00</th><th><span id = "btn-1700" class= "btn-planDnia">Wolne</span></th></tr>
-                    <tr><th>13:00</th><th><span id = "btn-1300" class= "btn-planDnia">Wolne</span></th><th>17:30</th><th><span id = "btn-1730" class= "btn-planDnia">Wolne</span></th></tr>
+                    <tr><th>09:00</th><th><span id = "btn-0900" class= "btn-planDnia" data-godzina="09:00">Wolne</span></th><th>13:30</th><th><span id = "btn-1330" class= "btn-planDnia" data-godzina="13:30">Wolne</span></th></tr>
+                    <tr><th>09:30</th><th><span id = "btn-0930" class= "btn-planDnia" data-godzina="09:30">Wolne</span></th><th>14:00</th><th><span id = "btn-1400" class= "btn-planDnia" data-godzina="14:00">Wolne</span></th></tr>
+                    <tr><th>10:00</th><th><span id = "btn-1000" class= "btn-planDnia" data-godzina="10:00">Wolne</span></th><th>14:30</th><th><span id = "btn-1430" class= "btn-planDnia" data-godzina="14:30">Wolne</span></th></tr>
+                    <tr><th>10:30</th><th><span id = "btn-1030" class= "btn-planDnia" data-godzina="10:30">Wolne</span></th><th>15:00</th><th><span id = "btn-1500" class= "btn-planDnia" data-godzina="15:00">Wolne</span></th></tr>
+                    <tr><th>11:00</th><th><span id = "btn-1100" class= "btn-planDnia" data-godzina="11:00">Wolne</span></th><th>15:30</th><th><span id = "btn-1530" class= "btn-planDnia" data-godzina="15:30">Wolne</span></th></tr>
+                    <tr><th>11:30</th><th><span id = "btn-1130" class= "btn-planDnia" data-godzina="11:30">Wolne</span></th><th>16:00</th><th><span id = "btn-1600" class= "btn-planDnia" data-godzina="16:00">Wolne</span></th></tr>
+                    <tr><th>12:00</th><th><span id = "btn-1200" class= "btn-planDnia" data-godzina="12:00">Wolne</span></th><th>16:30</th><th><span id = "btn-1630" class= "btn-planDnia" data-godzina="16:30">Wolne</span></th></tr>
+                    <tr><th>12:30</th><th><span id = "btn-1230" class= "btn-planDnia" data-godzina="12:30">Wolne</span></th><th>17:00</th><th><span id = "btn-1700" class= "btn-planDnia" data-godzina="17:00">Wolne</span></th></tr>
+                    <tr><th>13:00</th><th><span id = "btn-1300" class= "btn-planDnia" data-godzina="13:00">Wolne</span></th><th>17:30</th><th><span id = "btn-1730" class= "btn-planDnia" data-godzina="17:30">Wolne</span></th></tr>
                   </table>
                 </div>
               </div>
@@ -281,41 +282,37 @@
           </div>
           <div class="row">
             <div class="col-sm-6 center-block">
-              <form class="form-horizontal">
-                <div class="form-group">
-                  <label class="control-label col-sm-offset-1 col-sm-4" for="imie">Imie:</label>
-                  <div class="col-sm-6">
-                    <input type="text" class="form-control input-sm" id="imie">
+              <div class="row">
+                <form class="form-horizontal">
+                  <div class="form-group">
+                    <!-- <label class="control-label col-sm-offset-1 col-sm-4 col-xs-offset-2 col-xs-8" for="nrRej">Numer&nbsp;rej:</label> -->
+                    <label class="control-label col-sm-offset-1 col-sm-4 " for="nrRej">Numer&nbsp;rej:</label>
+                    <!-- <div class="col-sm-6 col-xs-offset-2 col-xs-8"> -->
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control input-sm" id="nrRej">
+                    </div>
                   </div>
-                </div>
-                <div class="form-group">
-                  <label class="control-label col-sm-offset-1 col-sm-4" for="nwazwisko">Nazwisko:</label>
-                  <div class="col-sm-6">
-                    <input type="text" class="form-control input-sm" id="nwazwisko">
+                  <div class="form-group">
+                    <label class="control-label col-sm-offset-1 col-sm-4" for="nrKon">Telefon:</label>
+                    <div class="col-sm-6">
+                      <input type="text" class="form-control input-sm" id="nrKon">
+                    </div>
                   </div>
-                </div>
-              </form>
+                </form>
+              </div>
             </div>
-            <div class="col-sm-6 center-block">
-              <form class="form-horizontal">
-                <div class="form-group">
-                  <label class="control-label col-sm-offset-1 col-sm-4" for="nrRej">Numer&nbsp;rej:</label>
-                  <div class="col-sm-6">
-                    <input type="text" class="form-control input-sm" id="enrRej">
-                  </div>
+            <div class="col-sm-6 center-block text-left">
+              <div class="row">
+                <div class="col-sm-12">
+                  <p class="ostrzezenie"></p>
                 </div>
-                <div class="form-group">
-                  <label class="control-label col-sm-offset-1 col-sm-4" for="nrKon">Telefon:</label>
-                  <div class="col-sm-6">
-                    <input type="text" class="form-control input-sm" id="nrKon">
-                  </div>
-                </div>
-              </form>
+              </div>
             </div>
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-modal" data-dismiss="modal" name="button">Zamknij</button>
+          <!-- <button type="button" class="btn btn-modal" data-dismiss="modal" name="button">Zamknij</button> -->
+          <button type="button" class="btn btn-modal" name="button">Zatwierdź</button>
         </div>
       </div>
     </div>
@@ -325,7 +322,7 @@
     <div class="modal-dialog">
       <div class="modal-content" id="divModal">
         <div class="modal-header">
-          <!-- <button class="close">&times;</button> -->
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h3 class="modal-title">Lorem ipsum</h3>
         </div>
         <div class="modal-body">
@@ -338,7 +335,7 @@
       </div>
     </div>
   </div>
-  <div class="terminarz-maly">Terminarz&nbsp&nbsp<span class="glyphicon glyphicon-calendar obrot90"></span></div>
+  <div class="terminarz-maly">Terminarz&nbsp;&nbsp;<span class="glyphicon glyphicon-calendar obrot90"></span></div>
   <!--SKRYPTY-->
   <script src="js/jquery-3.1.1.js"></script>
   <script src="js/jquery-ui.js"></script>

@@ -1,41 +1,55 @@
-$('#modalTerminarz').modal({ 'backdrop':'static' });
 rozmycie();
+$('#modalTerminarz').modal({ 'backdrop':'static' });
 
-var tablicaDni = ['Niedziela', 'Poniedziałek', 'Wtorek', 'Środa', 'Czwartek', 'Piątek', 'Sobota'];
-
-$.datepicker.regional['pl'] = {
-    closeText: 'Zamknij', // set a close button text
-    currentText: 'Dzisiaj', // set today text
-    monthNames: ['Styczeń', 'Luty', 'Marzec', 'Kwiecień', 'Maj', 'Czerwiec', 'Lipiec', 'Sierpień', 'Wrzesień', 'Październik', 'Listopad', 'Grudzień'], // set month names
-    monthNamesShort: ['Sty', 'Lut', 'Mar', 'Kwi', 'Maj', 'Cze', 'Lip', 'Sie', 'Wrz', 'Paź', 'Lis', 'Gru'], // set short month names
-    dayNames: tablicaDni, // set days names
-    dayNamesShort: ['Nie', 'Pon', 'Wto', 'Śro', 'Czw', 'Pią', 'Sob'], // set short day names
-    dayNamesMin: ['Ni', 'Po', 'Wt', 'Śr', 'Cz', 'Pi', 'So'], // set more short days names
-    dateFormat: 'dd/mm/yy' // set format date
-};
-
-$('#btn-0900').addClass('btn-planDnia-nieaktywny')
-$('#btn-0930').addClass('btn-planDnia-nieaktywny')
-
-$.datepicker.setDefaults($.datepicker.regional['pl']);
-
-var $datepicker = $('#datepicker').datepicker({
-  minDate: '#actualDate',
-  firstDay: 1,
-  onSelect: function () {
-    wybranaData = new $(this).datepicker('getDate');
-    $('#dzienTygodnia').html(tablicaDni[wybranaData.getDay()]);
-    console.log(tablicaDni[wybranaData.getDay()]);
-  }
-});
-
-currentDate = $datepicker.datepicker('getDate');
-console.log(currentDate);
-
-$('.btn-planDnia').on('click',function(){
-  console.log('Wykryto klikniecie')
-  if ($(this).hasClass('btn-planDnia-wybrany') !== true){
+$('.btn-planDnia').on('click', function () {
+  if ($(this).hasClass('btn-planDnia-nieaktywny') === false) {
     $('.btn-planDnia').removeClass('btn-planDnia-wybrany');
     $(this).addClass('btn-planDnia-wybrany');
   }
+});
+
+$('.btn-modal').on('click', function () {
+  var nrOstrzezenia = 0;
+  var ostrzezenie = '';
+
+  if (($('.btn-planDnia-wybrany').length)==false) {
+    nrOstrzezenia += 1;
+  }
+  if ($('#nrKon').val() === '') {
+    nrOstrzezenia += 2;
+  }
+  if ($('#nrRej').val() === '') {
+    nrOstrzezenia += 4;
+  }
+
+  console.log(nrOstrzezenia);
+
+  switch (nrOstrzezenia) {
+    case 0:
+      ostrzezenie = 'Rejestracja przebiegła pomyślnie';
+    break;
+    case 1:
+      ostrzezenie = 'Proszę wybrać datę i godzinę wizyty.';
+    break;
+    case 2:
+      ostrzezenie = 'Proszę wprowadzić numer kontaktowy.';
+    break;
+    case 3:
+      ostrzezenie = 'Proszę wybrać datę i godzinę wizyty oraz wprowadzić numer kontaktowy.';
+      break;
+    case 4:
+      ostrzezenie = 'Proszę wprowadzić numer rejestracyjny pojazdu.';
+    break;
+    case 5:
+      ostrzezenie = 'Proszę wybrać datę i godzinę wizyty oraz wprowadzić numer rejestracyjny pojazdu.';
+    break;
+    case 6:
+      ostrzezenie = 'Proszę wprowadzić numer rejestracyjny pojazdu oraz numer kontaktowy.';
+    break;
+    case 7:
+      ostrzezenie = 'Proszę wybrać datę i godzinę wizyty oraz wprowadzić numer rejestracyjny pojazdu i numer kontaktowy.';
+    break;
+  }
+
+  $('.ostrzezenie').html(ostrzezenie)
 });

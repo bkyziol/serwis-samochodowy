@@ -1,5 +1,35 @@
 var scrollTimeout;
 var procent = -40;
+var dzisiajszaData = new Date();
+
+function pobierz(zapytanie) {
+  $.ajax({
+    type: 'GET',
+    url: 'terminarz.php' + zapytanie,
+    success: function (terminy) {
+      $('.btn-planDnia-nieaktywny').html('Wolne');
+      $('.btn-planDnia-nieaktywny').removeClass('btn-planDnia-nieaktywny');
+      if (terminy == 'Error') {
+        $('.btn-planDnia').addClass('btn-planDnia-nieaktywny');
+        $('.ostrzezenie').html('Brak polączenia z serwerem.')
+      }else{
+        myObj = JSON.parse(terminy);
+        $.each(myObj, function (i, termin) {
+          $('#btn-' + termin.godzina).addClass('btn-planDnia-nieaktywny');
+          if (termin.status === undefined) {
+            $('#btn-' + termin.godzina).html('Zajete');
+          }
+          $('#btn-' + termin.godzina).html(termin.status);
+          $('.ostrzezenie').html('')
+        });
+      }
+  },
+    error: function () {
+      $('ostrzezenie').html('Błąd połącznie z serwerem.');
+    }
+  });
+}
+
 
 function wykrytoScrollowanie() {
   var goraOkna = $(window).scrollTop();
@@ -127,6 +157,34 @@ function przygas() {
   $('#' + ktory).removeClass('podswietl').addClass('przygas');
 }
 
+var $datepicker = $('#datepicker').datepicker({
+  minDate: '#actualDate',
+  firstDay: 1,
+  onSelect: function () {
+    var wybranaData = new $(this).datepicker('getDate');
+    var zapytanie = '?d=' + wybranaData.getDate() + '&m=' + wybranaData.getMonth() + '&r=' + wybranaData.getFullYear();
+    $('#dzienTygodnia').html(tablicaDni[wybranaData.getDay()]);
+    $('.btn-planDnia-wybrany').removeClass('btn-planDnia-wybrany');
+    pobierz(zapytanie);
+  },
+});
+
+$.datepicker.setDefaults($.datepicker.regional['pl']);
+
+$.datepicker.regional['pl'] = {
+    closeText: 'Zamknij', // set a close button text
+    currentText: 'Dzisiaj', // set today text
+    monthNames: ['Styczeń', 'Luty', 'Marzec', 'Kwiecień', 'Maj', 'Czerwiec', 'Lipiec', 'Sierpień', 'Wrzesień', 'Październik', 'Listopad', 'Grudzień'], // set month names
+    monthNamesShort: ['Sty', 'Lut', 'Mar', 'Kwi', 'Maj', 'Cze', 'Lip', 'Sie', 'Wrz', 'Paź', 'Lis', 'Gru'], // set short month names
+    dayNames: tablicaDni, // set days names
+    dayNamesShort: ['Nie', 'Pon', 'Wto', 'Śro', 'Czw', 'Pią', 'Sob'], // set short day names
+    dayNamesMin: ['Ni', 'Po', 'Wt', 'Śr', 'Cz', 'Pi', 'So'], // set more short days names
+    dateFormat: 'dd/mm/yy', // set format date
+};
+var tablicaDni = ['Niedziela', 'Poniedziałek', 'Wtorek', 'Środa', 'Czwartek', 'Piątek', 'Sobota'];
+
+
+
 $(window).scroll(function () {
   if (scrollTimeout) {
     clearTimeout(scrollTimeout);
@@ -146,6 +204,9 @@ $(function () {
   poczatekTapety();
   podswietlonyPrzycisk();
 
+  var zapytanie = '?d=' + dzisiajszaData.getDate() + '&m=' + dzisiajszaData.getMonth() + '&r=' + dzisiajszaData.getFullYear();
+  $('#dzienTygodnia').html(tablicaDni[dzisiajszaData.getDay()]);
+  pobierz(zapytanie);
 
   $('.ukryty').fadeTo(0 , 0.4);
   $('.navbar').fadeTo(0 ,0.4);
@@ -158,17 +219,18 @@ $(function () {
   }, 600);
 
   $('#divTerminarz').on('click', function () {
+    rozmycie()
     $('#modalTerminarz').modal({ 'backdrop':'static' });
   });
 
   $('.terminarz-maly').on('click', function () {
+    rozmycie()
     $('#modalTerminarz').modal({ 'backdrop':'static' });
-    rozmycie();
   });
 
   $('.btn-uslugi').on('click', function () {
+    rozmycie()
     $('#modalUslugi').modal({ 'backdrop':'static' });
-    rozmycie();
   });
 
   $('#modalTerminarz').on('hidden.bs.modal', wyostrzenie);
