@@ -1,18 +1,39 @@
 rozmycie();
 $('#modalTerminarz').modal({ 'backdrop':'static' });
 
-$('.btn-planDnia').on('click', function () {
-  if ($(this).hasClass('btn-planDnia-nieaktywny') === false) {
-    $('.btn-planDnia').removeClass('btn-planDnia-wybrany');
-    $(this).addClass('btn-planDnia-wybrany');
-  }
-});
+function wyslij(rezerwacja) {
+  console.log(rezerwacja);
+  $.ajax({
+    type: 'POST',
+    url: 'wprowadz.php',
+    data: rezerwacja,
+    success: function (data) {
+      console.log('Odpowiedz:', data); //the new item is returned with an ID
+      pobierz()
+    },
+    error: function () {
+      alert('Dupa nie działa!!!!');
+    },
+  });
+}
 
 $('.btn-modal').on('click', function () {
   var nrOstrzezenia = 0;
   var ostrzezenie = '';
+  var rezerwacja = {
+    dzien: wybranaData.getDate(),
+    miesiac: wybranaData.getMonth(),
+    rok: wybranaData.getFullYear(),
+    godzina: $('.btn-planDnia-wybrany').attr('data-godzina'),
+    rejestracja: $('#nrRej').val(),
+    telefon: $('#nrKon').val(),
+  };
 
-  if (($('.btn-planDnia-wybrany').length)==false) {
+  //USUNAC
+  wyslij(rezerwacja);
+  //USUNAC
+
+  if (($('.btn-planDnia-wybrany').length) == false) {
     nrOstrzezenia += 1;
   }
   if ($('#nrKon').val() === '') {
@@ -22,11 +43,10 @@ $('.btn-modal').on('click', function () {
     nrOstrzezenia += 4;
   }
 
-  console.log(nrOstrzezenia);
-
   switch (nrOstrzezenia) {
     case 0:
       ostrzezenie = 'Rejestracja przebiegła pomyślnie';
+      // wyslij(rezerwacja);
     break;
     case 1:
       ostrzezenie = 'Proszę wybrać datę i godzinę wizyty.';
@@ -50,6 +70,5 @@ $('.btn-modal').on('click', function () {
       ostrzezenie = 'Proszę wybrać datę i godzinę wizyty oraz wprowadzić numer rejestracyjny pojazdu i numer kontaktowy.';
     break;
   }
-
   $('.ostrzezenie').html(ostrzezenie)
 });

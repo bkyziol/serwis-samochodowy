@@ -1,8 +1,10 @@
 var scrollTimeout;
 var procent = -40;
-var dzisiajszaData = new Date();
+var wybranaData = new Date();
 
-function pobierz(zapytanie) {
+function pobierz() {
+  var zapytanie = '?d=' + wybranaData.getDate() + '&m=' + wybranaData.getMonth() + '&r=' + wybranaData.getFullYear();
+  $('#dzienTygodnia').html(tablicaDni[wybranaData.getDay()]);
   $.ajax({
     type: 'GET',
     url: 'terminarz.php' + zapytanie,
@@ -20,16 +22,15 @@ function pobierz(zapytanie) {
             $('#btn-' + termin.godzina).html('Zajete');
           }
           $('#btn-' + termin.godzina).html(termin.status);
-          $('.ostrzezenie').html('')
+          $('.ostrzezenie').html('');
         });
       }
-  },
+    },
     error: function () {
-      $('ostrzezenie').html('Błąd połącznie z serwerem.');
-    }
+      $('.ostrzezenie').html('Błąd połącznie z serwerem.');
+    },
   });
 }
-
 
 function wykrytoScrollowanie() {
   var goraOkna = $(window).scrollTop();
@@ -161,11 +162,11 @@ var $datepicker = $('#datepicker').datepicker({
   minDate: '#actualDate',
   firstDay: 1,
   onSelect: function () {
-    var wybranaData = new $(this).datepicker('getDate');
+    wybranaData = new $(this).datepicker('getDate');
     var zapytanie = '?d=' + wybranaData.getDate() + '&m=' + wybranaData.getMonth() + '&r=' + wybranaData.getFullYear();
     $('#dzienTygodnia').html(tablicaDni[wybranaData.getDay()]);
     $('.btn-planDnia-wybrany').removeClass('btn-planDnia-wybrany');
-    pobierz(zapytanie);
+    pobierz();
   },
 });
 
@@ -203,10 +204,7 @@ $(function () {
   dostosujWysokosc();
   poczatekTapety();
   podswietlonyPrzycisk();
-
-  var zapytanie = '?d=' + dzisiajszaData.getDate() + '&m=' + dzisiajszaData.getMonth() + '&r=' + dzisiajszaData.getFullYear();
-  $('#dzienTygodnia').html(tablicaDni[dzisiajszaData.getDay()]);
-  pobierz(zapytanie);
+  pobierz();
 
   $('.ukryty').fadeTo(0 , 0.4);
   $('.navbar').fadeTo(0 ,0.4);
@@ -255,6 +253,13 @@ $(function () {
 
   $('#mainNavbar a').click(function (event) {
     powolneScrollowanie.call(this);
+  });
+
+  $('.btn-planDnia').on('click', function () {
+    if ($(this).hasClass('btn-planDnia-nieaktywny') === false) {
+      $('.btn-planDnia').removeClass('btn-planDnia-wybrany');
+      $(this).addClass('btn-planDnia-wybrany');
+    }
   });
 
 });
